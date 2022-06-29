@@ -1,0 +1,244 @@
+moonjong22.dothome.co.kr/myadmin/
+
+
+moonjong22.dothome.co.kr/kerly_market/select_table_kerly_test.php
+moonjong22.dothome.co.kr/kerly_market2/
+
+데이터베이스 생성 CREATE DATABASE moonjong2
+moonjong22
+
+마켓컬리 회원가입 테이블   
+테이블 생성 CAREATE TABLE market_kerly_gaib_table
+
+
+반응형웹 제작
+POFO 원페이지형 웹사이트 제작
+
+
+데이이터베이스 CRUD 구현 - 리액트 
+> 라우터 컴포넌트를 화면전환
+> 변수지정 필수 타입스크립트
+> 상택관리 리덕스 
+> 공공데이터
+> 프레임 워크 : Vue.js
+
+
+
+
+회원가입정보 저장  INSERT  - C
+테이블에 데이터 저장  INSERT INTO  market_kerly_gaib_table SQL
+
+회원가입정보 가져오기 출력 SELECT - R
+테이블에 데이터 가져오기 목록 출력  SELECT * FROM market_kerly_gaib_table  SQL
+
+회원가입정보 수정 UPDATE - U
+테이블에 데이터 수정하기  UPDATE 
+
+회원가입정보 삭제 DELETE - D
+테이블에 데이터 수정하기  DELETE
+
+
+
+
+
+
+
+C:\>mysql -u root -p
+Enter password: ****
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 8.0.29 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]>
+
+
+데이터베이스 확인(보여라)
+show databases;
+
+
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.061 sec)
+
+MySQL [(none)]> create database moonjong22;
+Query OK, 1 row affected (0.015 sec)
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| moonjong22         |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.002 sec)
+
+MySQL [(none)]>
+
+
+MySQL [(none)]> use moonjong22;
+Database changed
+MySQL [moonjong22]>
+
+
+데이터베이스 moonjong22 안에 
+테이블 생성
+
+마켓컬리회원가입테이블
+
+
+CREATE TABLE `market_kerly_gaib_table` (
+  `idx`       INT(11)  NOT NULL AUTO_INCREMENT COMMENT '자동증가인덱스번호',
+  `id`        VARCHAR(20) NOT NULL COMMENT '아이디',
+  `pw`        VARCHAR(20) NOT NULL COMMENT '비밀번호',
+  `name`      VARCHAR(50) NOT NULL COMMENT '이름',
+  `email`     VARCHAR(500) NOT NULL COMMENT '이메일',
+  `hp`        VARCHAR(13) NOT NULL COMMENT '휴대폰',
+  `addr`      VARCHAR(300) NOT NULL COMMENT '주소',
+  `gender`    VARCHAR(4) NULL COMMENT '성별',
+  `birth`     DATE NULL COMMENT '생년월일',
+  `addinput`  VARCHAR(300) NULL COMMENT '추가입력사항',
+  `agrement`	VARCHAR(1000) NOT NULL COMMENT '이용약관동의',
+  `joindate`	DATE NOT NULL COMMENT '가입일자',
+  PRIMARY KEY(`idx`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='마켓컬리 회원가입 테이블';
+
+
+
+
+
+CREATE TABLE `market_kerly_gaib_table` (
+  `idx`       INT(11)  NOT NULL AUTO_INCREMENT,
+  `id`        VARCHAR(20) NOT NULL,
+  `pw`        VARCHAR(20) NOT NULL,
+  `name`      VARCHAR(50) NOT NULL,
+  `email`     VARCHAR(500) NOT NULL,
+  `hp`        VARCHAR(13) NOT NULL,
+  `addr`      VARCHAR(300) NOT NULL,
+  `gender`    VARCHAR(4) NULL,
+  `birth`     DATE NULL,
+  `addinput`  VARCHAR(300) NULL,
+  `agrement`	VARCHAR(1000) NOT NULL,
+  `joindate`	DATE NOT NULL,
+  PRIMARY KEY(`idx`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='market kerly';
+
+
+MySQL [moonjong22]> CREATE TABLE `market_kerly_gaib_table` (
+    ->   `idx`       INT(11)  NOT NULL AUTO_INCREMENT,
+    ->   `id`        VARCHAR(20) NOT NULL,
+    ->   `pw`        VARCHAR(20) NOT NULL,
+    ->   `name`      VARCHAR(50) NOT NULL,
+    ->   `email`     VARCHAR(500) NOT NULL,
+    ->   `hp`        VARCHAR(13) NOT NULL,
+    ->   `addr`      VARCHAR(300) NOT NULL,
+    ->   `gender`    VARCHAR(4) NULL,
+    ->   `birth`     DATE NULL,
+    ->   `addinput`  VARCHAR(300) NULL,
+    ->   `agrement`VARCHAR(1000) NOT NULL,
+    ->   `joindate`DATE NOT NULL,
+    ->   PRIMARY KEY(`idx`)
+    -> ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='market kerly';
+Query OK, 0 rows affected, 2 warnings (0.010 sec)
+
+MySQL [moonjong22]>
+
+
+테이블 확인
+
+show tables;
+
+테이블 구조 확인
+[Describe] 디스크라이브
+
+DESC market_kerly_gaib_table;
+
+MySQL [moonjong22]> show tables;
++-------------------------+
+| Tables_in_moonjong22    |
++-------------------------+
+| market_kerly_gaib_table |
++-------------------------+
+1 row in set (0.009 sec)
+
+MySQL [moonjong22]> DESC market_kerly_gaib_table;
++----------+---------------+------+-----+---------+----------------+
+| Field    | Type          | Null | Key | Default | Extra          |
++----------+---------------+------+-----+---------+----------------+
+| idx      | int           | NO   | PRI | NULL    | auto_increment |
+| id       | varchar(20)   | NO   |     | NULL    |                |
+| pw       | varchar(20)   | NO   |     | NULL    |                |
+| name     | varchar(50)   | NO   |     | NULL    |                |
+| email    | varchar(500)  | NO   |     | NULL    |                |
+| hp       | varchar(13)   | NO   |     | NULL    |                |
+| addr     | varchar(300)  | NO   |     | NULL    |                |
+| gender   | varchar(4)    | YES  |     | NULL    |                |
+| birth    | date          | YES  |     | NULL    |                |
+| addinput | varchar(300)  | YES  |     | NULL    |                |
+| agrement | varchar(1000) | NO   |     | NULL    |                |
+| joindate | date          | NO   |     | NULL    |                |
++----------+---------------+------+-----+---------+----------------+
+12 rows in set (0.004 sec)
+
+MySQL [moonjong22]>
+
+
+
+데이터저장(입력)
+
+INSERT INTO `market_kerly_gaib_table` (id, pw, name, email, hp, addr, gender, birth, addinput, agrement, joindate) VALUES 
+('moonjong1', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+('moonjong2', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+('moonjong3', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+('moonjong4', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+('moonjong5', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03');
+
+데이터베이스 
+테이블 입력 내용 목록 확인
+
+SELECT * FROM market_kerly_gaib_table;
+
+
+MySQL [moonjong22]> INSERT INTO `market_kerly_gaib_table` (id, pw, name, email, hp, addr, gender, birth, addinput, agrement, joindate) VALUES
+    -> ('moonjong1', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+    -> ('moonjong2', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+    -> ('moonjong3', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+    -> ('moonjong4', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03'),
+    -> ('moonjong5', 'moonjong1234', 'LOOEEE', 'moonjong@naver.com', '010-7942-5350', 'DKDKSDLAKSDFA', 'SA', '2000-06-03', 'SDFASDFASDAF', 'DSFASDFASDF', '2022-06-03');
+Query OK, 5 rows affected (0.005 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MySQL [moonjong22]> SELECT * FROM market_kerly_gaib_table;
++-----+-----------+--------------+--------+--------------------+---------------+---------------+--------+------------+--------------+-------------+------------+
+| idx | id        | pw           | name   | email              | hp            | addr          | gender | birth      | addinput     | agrement    | joindate   |
++-----+-----------+--------------+--------+--------------------+---------------+---------------+--------+------------+--------------+-------------+------------+
+|   1 | moonjong1 | moonjong1234 | LOOEEE | moonjong@naver.com | 010-7942-5350 | DKDKSDLAKSDFA | SA     | 2000-06-03 | SDFASDFASDAF | DSFASDFASDF | 2022-06-03 |
+|   2 | moonjong2 | moonjong1234 | LOOEEE | moonjong@naver.com | 010-7942-5350 | DKDKSDLAKSDFA | SA     | 2000-06-03 | SDFASDFASDAF | DSFASDFASDF | 2022-06-03 |
+|   3 | moonjong3 | moonjong1234 | LOOEEE | moonjong@naver.com | 010-7942-5350 | DKDKSDLAKSDFA | SA     | 2000-06-03 | SDFASDFASDAF | DSFASDFASDF | 2022-06-03 |
+|   4 | moonjong4 | moonjong1234 | LOOEEE | moonjong@naver.com | 010-7942-5350 | DKDKSDLAKSDFA | SA     | 2000-06-03 | SDFASDFASDAF | DSFASDFASDF | 2022-06-03 |
+|   5 | moonjong5 | moonjong1234 | LOOEEE | moonjong@naver.com | 010-7942-5350 | DKDKSDLAKSDFA | SA     | 2000-06-03 | SDFASDFASDAF | DSFASDFASDF | 2022-06-03 |
++-----+-----------+--------------+--------+--------------------+---------------+---------------+--------+------------+--------------+-------------+------------+
+5 rows in set (0.001 sec)
+
+MySQL [moonjong22]>
+
+
