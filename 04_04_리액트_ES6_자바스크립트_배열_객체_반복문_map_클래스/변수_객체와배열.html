@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트를 위한 자바스크립트</title>
+
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+
+    <div id="App"></div>
+
+    
+    <div id="root">
+
+        <h1 id="title1"></h1>
+        <h2 id="ittle2"></h2>
+        <p class="pa pa1"></p>
+        <p class="pa pa2"></p>
+        <p class="pa pa3"></p>
+
+        <h1 id="calc"></h1>
+
+        <hr>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>취미</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+    <style>
+        table {width:600px; border-collapse:collapse;margin:0 auto;}
+        table th {height:50px;}
+        table td {height:40px;text-align:center;}
+        table th,td {border:1px solid #ccc;}
+    </style>
+
+
+    <script  type="text/babel">
+        //선택자
+        //도큐먼트.선택자.출력내요태그
+        document.getElementById('title1').innerHTML = '<em>DOM 도큐먼트(Document) 오브젝트(Object) 모델(Model)</em>';
+
+        // ES5
+        // var 변수 재사용, 재선언 가능
+        // var pa = 5 ;
+        // var pa = 10;
+        // var pa = 15;
+        // var pa = 5;
+
+
+        // ES6   ES2015  이후   ESNext
+        // const 불변 변수, 같은 이름의 변수는 중복 사용 불가(재선언 불가)
+        // let  변수 : 값은 변경가능, 같은 이름의 변수는 중복 사용 불가(재선언 불가)
+
+        const tit2 = document.getElementById('ittle2');
+        tit2.innerHTML = `<strong>바닐라 자바스크립트는 라이브러리를 사용하지 않고 사용하는 순수 자바스크립트이다.</strong>`
+
+
+        const pa0 = document.getElementsByClassName('pa')[0];  //배열처리
+        pa0.innerHTML = `0 클래스는 여러개가 중복 사용 가능하기때문에 선택자를 배열처리 해서 사용 한다.`
+
+        const pa1 = document.getElementsByClassName('pa')[1];  //배열처리
+        pa1.innerHTML = `1 클래스는 여러개가 중복 사용 가능하기때문에 선택자를 배열처리 해서 사용 한다.`
+
+        const pa2 = document.getElementsByClassName('pa')[2];  //배열처리
+        pa2.innerHTML = `2 클래스는 여러개가 중복 사용 가능하기때문에 선택자를 배열처리 해서 사용 한다.`;
+
+
+
+        let t2 = document.querySelector('#ittle2');
+        t2.innerHTML = `document.querySelector 쿼리셀렉터사용 편리함`;
+
+        let p0 = document.querySelector('.pa1');
+        let p1 = document.querySelector('.pa2');
+        let p2 = document.querySelector('.pa3');
+
+        p0.innerHTML = `document.querySelector('.pa1') 쿼리셀렉터사용 편리함`;
+        p1.innerHTML = `document.querySelector('.pa2') 쿼리셀렉터사용 편리함`;
+        p2.innerHTML = `document.querySelector('.pa3') 쿼리셀렉터사용 편리함`;
+
+
+        let a = 100;
+        let b = 200;
+        let c = a * b;
+
+        const calc = document.getElementById('calc');
+              //빽틱(역 홑따옴표) ` 
+              calc.innerHTML = `변수 a=${a}, 변수 b=${b}, c=${a}*${b}`;
+        
+
+        // 객체 배열
+        // 1. 배열
+        //연락처 변수
+        // 번호/이름/전화번호
+        // let bun1 = 1  //정수 Integer 자료형 => type Script(타입 스크립트)
+        // let name= '이순신' //문자열 string 자료형
+        // let tel= '010-7942-5305' //문자열 string 자료형
+     
+        // let bun2 = 2  //정수 Integer 자료형 => type Script(타입 스크립트)
+        // let name= '이성계' //문자열 string 자료형
+        // let tel= '010-7942-5304' //문자열 string 자료형
+
+        let bun = [];  //배열
+        let name = [];  //배열
+        let tel = [];  //배열
+
+        // bun[0] = 1;
+        // name[0] = '이순신';
+        // tel[0] = '010-7942-5305';
+
+            bun = [1,2,3];
+            name = ['이순신','이성계','김유신'];
+            tel = ['010-7942-5305', '010-111-1113', '010-222-2222'];
+
+            //[0] =>  [배열인수]
+            // console.log( bun[0], name[0], tel[0] );
+            // console.log( bun[1], name[1], tel[1] );
+            // console.log( bun[2], name[2], tel[2] );
+        
+
+            // 반복문 : [i] => [0]  [1]  [2] 
+            // for(let i=0; i<=2; i++){
+            for(let i=0; i<3; i++){  // i=i+1
+               // console.log( bun[i], name[i], tel[i] ); // 0 1 2
+            }
+
+            //2씩증가하면 짝수만 출력
+            for(let i=2; i<=100; i+=2){ // i=i+2
+                //console.log( i );
+            }
+
+            //2씩증가하면 홀수만 출력
+            for(let i=1; i<=100; i+=2){ // i=i+2
+                //console.log( i );
+            }
+            
+            //5의 배수 출력 1~100
+            for(let i=5; i<=100; i+=5){ // i=i+5
+               // console.log( i );
+            }
+
+
+            //100~1 1씩 감소 출력
+            for(let i=100; i>=1; i--){ // i=i-1
+               // console.log( i );
+            }
+
+            //100~1 1씩 감소 출력
+            for(let i=100; i>=1; i-=2){ // i=i-2
+               // console.log( i );
+            }
+
+            // 구구단
+            // 2*1=2
+            // 2*2=4
+            // 2*3=6
+            // 2*4=8
+            // 2*5=10
+            // 2*6=12
+            // 2*7=14
+            // 2*8=16
+            // 2*9=18
+            // for(let i=1; i<=9; i++){
+            //     //console.log(  2 + '*' +  i  + '=' + (2*i)  );
+            //     console.log(  `2*${i}=${2*i}`  );
+            // }
+
+            //2단 ~ 9단
+            for(let i=2; i<=9; i++){
+                for(let j=1; j<=9; j++){
+                    //console.log( `${i}*${j}=${i*j}` );
+                }
+            }
+
+            //누적합 1 ~ 100 = 5050
+            let hap = 0;
+            for(let i=1; i<=100; i++){
+                //hap = hap + i; // hap += i 0+1=1  1+2=3  3+3=6 ... 
+                hap += i;
+                //console.log( `${hap} += ${i}` );
+            }
+            //console.log( hap );
+
+            //누승:곱한 결과를 누적합
+            //팩토리얼 !5 => 1*2*3*4*5=120
+            let pact = 1; //곱하기 초기값 반드시 1
+            for(let i=1; i<=5; i++){
+                // pact = pact * i;
+                pact *= i;
+                //console.log( `${pact} *= ${i}` );
+            }
+
+            //console.log( pact );
+
+         
+            // bun = [1,2,3];
+            // name = ['이순신','이성계','김유신'];
+            // tel = ['010-7942-5305', '010-111-1113', '010-222-2222'];
+
+            // let addr = [];
+
+            //     addr[0]=[];
+            //     addr[1]=[];
+            //     addr[2]=[];
+                // addr[][]
+                // addr[][][]
+                // addr[][][][]
+
+        // 2. 객체(Objec)
+        // let addr = {}    
+        // let addr = new Object(0);
+        // 번호 속성(프로퍼티 Property) : 값(밸류 Value)   
+        let addr = [
+            {번호:1, 이름:'이순신', 전화: '010-7942-5305'},
+            {번호:2, 이름:'이성계', 전화: '010-111-1113'},
+            {번호:3, 이름:'김유신', 전화: '010-222-2222'}
+        ];
+
+        for(let i=0; i<3; i++){
+            //console.log( addr[i].번호, addr[i].이름, addr[i].전화  );
+        }    
+
+
+        let member = [
+            {번호:1, 이름:'이영자', 취미:['영화', '음악']},
+            {번호:2, 이름:'차분희', 취미:['등산']},
+            {번호:3, 이름:'유산슬', 취미:['낚시', '등산', '축구', '수영']},
+            {번호:4, 이름:'김시로', 취미:['하이킹', '수영','승마']},
+            {번호:5, 이름:'이순자', 취미:['독서', '수영']}
+        ];
+
+        // member.length 총 길이 5
+        // for(let i=0; i<member.length; i++){
+        //     console.log( member[i].번호, member[i].이름 );
+        //     for(let j=0; j<member[i].취미.length; j++){
+        //         console.log( member[i].취미[j] );
+        //     }
+        // }
+
+        let txt = '';
+        for(let i=0; i<member.length; i++){
+            //console.log( member[i].번호, member[i].이름 );
+            txt += `${member[i].번호} ${member[i].이름}`;
+            for(let j=0; j<member[i].취미.length; j++){
+                txt += ` ${member[i].취미[j]}`;
+            }
+            txt += `\n`;  //줄바꿈
+        }
+
+        //console.log( txt );
+
+
+
+        // 반복문
+        let obj = [
+            {번호:1, 이름:'이순신', 전화: '010-7942-5305'},
+            {번호:2, 이름:'이성계', 전화: '010-111-1113'},
+            {번호:3, 이름:'김유신', 전화: '010-222-2222'}
+        ];
+        // ES5
+        // forEach
+        // obj.forEach();
+        // obj.forEach(function(item, idx){});
+        obj.forEach(function(item, idx){
+           // console.log(item.번호, item.이름, item.전화);
+        });
+
+        
+        let obj2 = [
+            {번호:1, 이름:'이영자', 취미:['영화', '음악']},
+            {번호:2, 이름:'차분희', 취미:['등산']},
+            {번호:3, 이름:'유산슬', 취미:['낚시', '등산', '축구', '수영']},
+            {번호:4, 이름:'김시로', 취미:['하이킹', '수영','승마']},
+            {번호:5, 이름:'이순자', 취미:['독서', '수영']}
+        ];
+
+
+        obj2.forEach((item, idx) => {
+            //console.log(item.번호, item.이름, item.취미);
+        });
+
+
+        // obj2.forEach(function(item, idx){
+        //     console.log(item.번호, item.이름);
+        //     for(let i=0; i<obj2.item[idx].취미.length; i++){
+        //         console.log(obj2.item.취미[i]);
+        //     }
+        // });
+
+
+        // ES6   
+        // map
+        // obj.map();
+        // obj.map(function(){});
+        obj.map((item, index, array) => {
+            // console.log( item, index, array );
+           // console.log(item.번호, item.이름, item.전화 );
+        });
+
+
+
+        // obj2.forEach((item, idx) => {
+        //     console.log(item.번호, item.이름, item.취미);
+        // });
+
+        // obj2.map((item, idx, arr) => {
+        obj2.map((item) => {
+            //console.log(item.번호, item.이름, item.취미);
+        });
+
+
+        // 전개연산자 ...
+        const arr1 = ['1학년', '2학년'];
+        const arr2 = ['3학년', '4학년'];
+        
+        // 배열 병합(merge) ['1학년', '2학년', '3학년', '4학년'];
+        // ES5 : 컨켓(concat) [].concat(배열1, 배열2);
+        const arr3 = [].concat(arr1, arr2); //머지(Merge)
+
+        // console.log('arr1 ', arr1 );
+        // console.log('arr2 ', arr2 );
+        // console.log('arr3 ', arr3 );
+        
+        // 배열 병합(merge) ['1학년', '2학년', '3학년', '4학년'];
+        // ES6 : 전개연산자 ...
+        const arr4 = [...arr1, ...arr2];
+        //console.log('arr4  = [...arr1, ...arr2]', arr4 );
+
+        // 객체를 전개연산자
+        const carObj1 = {색상:'검정', 옵션:'풀옵션'}
+        const carObj2 = {에어백:'장착', 휠:'80인치'}
+        const carObj3 = {...carObj1, ...carObj2}
+       // console.log('carObj1 ', carObj1 );
+       // console.log('carObj2 ', carObj2 );
+       // console.log('carObj3  {...carObj1, ...carObj2} ', carObj3 );
+
+
+        // 비구조화 == 구조분할할당
+       const obj4 = {} = ['피자', '파스타', '랍스타', '탕수육', '짜장면'];
+       //console.log( 'const obj4 = {} = ' +  obj4 );
+       
+       let d='';
+       let e='';
+       let f='';
+       let obj5 = [];
+           
+        [d, e] = ["피자", "파스타"]; // 배열 변수 d에 우측 배열 첫번째를 할당
+                                       // 배열 변수 e에 우측 배열 두번째를 할당
+        //   console.log( d, e );
+
+        [d, e, f] = ["피자", "파스타", "딸기", "바나나", "자몽"]; 
+         //  console.log( d, e, f );
+
+        [d, e, ...f] = ["피자", "파스타", "딸기", "바나나", "자몽"]; 
+       // console.log('[d, e, ...f] ' +  d, e, f );
+
+        const [x, ...y] = ["피자", "파스타", "딸기", "바나나", "자몽"]; 
+        //console.log('[x, ...y] ' +  x, y );
+
+        const obj6 = {
+            cnt: 0,
+            init: '객체 초기값 문자열 설정',
+            fn: function(z){
+                this.cnt++;
+                this.cnt++;
+                this.cnt++;
+                this.cnt++;
+                this.cnt++;
+                return   `${this.cnt} 메서드의 결과 입니다. 매개변수값은 ${z}`;
+            }
+        }
+
+        console.log( 'obj6.cnt ', obj6.cnt );
+        console.log( 'obj6.init ', obj6.init );
+        console.log('obj6.fn(2022) ', obj6.fn(2022) ); //fn() 메서드는 전달인자를 보내서 결과값이 리턴문으로 되돌아 온다.
+
+        //비구조화 == 구조분할할당
+        const { init, fn } = obj6;
+
+            // console.log('const { init } = obj6 ',  init );
+            // console.log('const { init } = obj6 ',  fn );
+
+
+        // 디버깅 리턴문
+        ///////////////////////////////////////////////////////////
+        let obj7 = [
+            {번호:1, 이름:'이영자', 취미:['영화', '음악']},
+            {번호:2, 이름:'차분희', 취미:['등산']},
+            {번호:3, 이름:'유산슬', 취미:['낚시', '등산', '축구', '수영']},
+            {번호:4, 이름:'김시로', 취미:['하이킹', '수영','승마']},
+            {번호:5, 이름:'이순자', 취미:['독서', '수영']}
+        ];
+
+        // 객체 내용을 리턴문을 활용 데이터를 반복(map()함수) 처리하여 
+        // 테이블 태그 요소에 출력
+        const tbody = document.querySelector('.tbody');
+        txt = '';
+        
+        // 줄단위
+        // 칸단위
+        // 리액트방식 출력
+        const result = obj7.map((item)=>{
+                        return (
+                            //JSX(JavaScript  XML)
+                                <tr>
+                                    <td>{item.번호}</td>
+                                    <td>{item.이름}</td>
+                                    <td>{
+                                        
+                                            item.취미.map(function(item2){
+                                                return(
+                                                    <span>{item2}</span>
+                                                )   
+                                            })
+                                    
+                                    }</td>
+                                </tr>
+                                        
+                            )
+                        });
+
+
+
+        //출력    
+        tbody.innerHTML = result;
+
+
+
+        // obj7.map((item)=>{
+        //     txt +=`<tr>`;
+        //     txt +=`<td>${item.번호}</td>`
+        //     txt +=`<td>${item.이름}</td>`
+        //     txt +=`<td>${item.취미}</td>`
+        //     txt +=`</tr>`            
+        // });
+
+
+        //출력    
+    //    tbody.innerHTML = txt;
+
+       class Obj2Class extends React.Component {
+            render() {
+                
+                const result = obj7.map((item)=>{
+                        return (
+                        //JSX(JavaScript  XML)
+                            <tr>
+                                <td>{item.번호}</td>
+                                <td>{item.이름}</td>
+                                <td>{
+                                    
+                                        item.취미.map(function(item2){
+                                            return(
+                                                <span>{item2}</span>
+                                            )   
+                                        })
+                                
+                                }</td>
+                            </tr>
+                                    
+                        )
+                    });
+
+                return (
+                    <div>
+
+
+                        <table>
+                            <caption>React Componetn Ouput</caption>
+                            <thead>
+                                <th>번호</th>
+                                <th>이름</th>
+                                <th>취미</th>
+                            </thead>
+                            <tbody>
+                                {result}
+                            </tbody>
+                        </table>
+                    </div>
+                );
+            }
+       }
+
+
+       ReactDOM.render(
+           <Obj2Class />,
+           document.getElementById('App')
+       );
+
+
+
+
+        //객체 ES5
+        //카멜케이스 기법
+        var objEs5 = {
+            init: function(){
+                this.section1();
+                this.section2();
+                this.section3();
+            },
+            section1: function(){
+                console.log('section1 메서드');
+            },
+            section2: function(){
+                console.log('section2 메서드');
+            },
+            section3: function(){
+                console.log('section3 메서드');
+            }
+        }
+        objEs5.init();
+
+
+        //객체 ES6
+        //카멜케이스 기법
+        const objEs6 = {
+            init(){
+                console.log('objEs6 init() 메서드');
+                this.section1();
+                this.section2();
+                this.section3();
+            },
+            section1(){
+                console.log('section1 메서드');
+            },
+            section2(){
+                console.log('section2 메서드');
+            },
+            section3(){
+                console.log('section3 메서드');
+            }
+        }
+        objEs6.init();
+
+
+
+        //클래스 ES6
+        //파스칼 케이스 기법(네이밍규칙)        
+        // class ObjClass extends React.Component { 클래스에서 리액트의 상위 컴포넌트를 상속 받는다.
+        class ObjClass {
+            init(){
+                console.log('ObjClass init() 메서드');
+                this.section1();
+                this.section2();
+                this.section3();
+            }
+            section1(){
+                console.log('section1 메서드');
+            }
+            section2(){
+                console.log('section2 메서드');
+            }
+            section3(){
+                console.log('section3 메서드');
+            }
+        }
+
+        //객체생성자 = new 생성자방식처리 객체이름즉 클래스이름()
+      const newObjClass = new ObjClass();  //클래스도 함수다
+      newObjClass.init();  //객체.초기실행메서드호출();
+
+
+        //클래스는 상속을 한다. extends 
+        class School {
+            title= '서울대학교';
+            cnt= 0;
+
+            constructor(){  //컨스트럭터
+                this.name = '이순신';
+                this.tel = '010-7942-5305'                
+            }
+        }
+
+        class Lecture extends School { //상속
+            init(){
+                
+                console.log( '상속받은 title ', this.title );
+                this.cnt++;
+                this.cnt++;
+                this.cnt++;
+                this.cnt++;
+                this.cnt++;
+                console.log( '상속받은 cnt ', this.cnt );
+                console.log( '상속받은 name ', this.name );
+                console.log( '상속받은 tel ', this.tel );
+            }
+        }
+
+        class Student extends Lecture {
+            init(){
+                this.class1();
+                this.class2();
+            }
+            class1(){
+                this.cnt+=200;
+                console.log( 'Student :',  this.cnt );
+            }
+            class2(){
+                console.log( ' Student : 상속받은 name ', this.name );
+                console.log( ' Student : 상속받은 tel ', this.tel );
+            }
+        }
+
+
+       //교수
+       const newLecture  =  new Lecture();    
+       newLecture.init();
+
+       //학생
+       const newStudent  =  new Student();    
+       newStudent.init();
+
+
+        //다음시간 모듈(import export)
+        //리액트 설치와 리액트 구문 / 구현
+
+
+        // Creat-React-App 
+
+        //   import React, { Component } from 'react';
+          
+        //   class 변수_객체와배열 extends Component {
+        //       render() {
+        //           return (
+        //               <div>
+                          
+        //               </div>
+        //           );
+        //       }
+        //   }
+          
+        //   export default 변수_객체와배열;  
+
+
+    </script>
+
+</body>
+</html>
