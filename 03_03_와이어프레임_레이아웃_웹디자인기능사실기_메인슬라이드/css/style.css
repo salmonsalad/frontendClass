@@ -1,0 +1,44 @@
+#wrap {width:1200px;height:700px;margin:0 auto;}
+#wrap #header {width:100%;height:100px;display:flex;}
+#wrap #header .left-box {width:180px;height:100%;background-color:rgba(255,0,255, 1);}
+#wrap #header .right-box {width:1020px;height:100%;background-color:rgba(0,0,255, 1);}
+/* 네비게이션 */
+#wrap #header .right-box #nav {width:700px;height:50px;background-color: brown;margin:25px 20px 25px auto;}
+#wrap #header .right-box #nav > ul {width:100%;display:flex;height:100%;}
+#wrap #header .right-box #nav > ul > li {width:25%;text-align:center;height:100%;}
+#wrap #header .right-box #nav > ul > li > a {color:rgba(0,0,0, 1);font-size:15px;display:block;background:rgba(255,255,255, 1);height:100%;line-height:50px;}
+#wrap #header .right-box #nav > ul > li > a:hover {color:rgba(255,255,255, 1);background:rgba(0,0,0, 1);}
+
+/* 서브메뉴 */
+#wrap #header .right-box #nav > ul > li > .sub {width:100%;display:none;}
+#wrap #header .right-box #nav > ul > li:hover > .sub {display:block;}
+#wrap #header .right-box #nav > ul > li:focus > .sub {display:block;}
+#wrap #header .right-box #nav > ul > li > .sub ul {width:100%;}
+#wrap #header .right-box #nav > ul > li > .sub ul li {width:100%;}
+#wrap #header .right-box #nav > ul > li > .sub ul li a {display:block;width:100%;color:rgba(0,0,0, 1);background:rgba(240,240,240, 1);height:35px;line-height:35px;}
+#wrap #header .right-box #nav > ul > li > .sub ul li a:hover {color:rgba(255,255,255, 1);background:rgba(0,0,0, 1);}
+
+
+#wrap #main {width:100%;height:500px;}
+#wrap #main #section1 {width:100%;height:300px;background-color:rgba(0,255,255, 1);}
+#wrap #main #section1 .slide-container {width:100%;}
+#wrap #main #section1 .slide-container .slide-view {width:100%;overflow:visible;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap {display:flex;width:500%;margin-left:-100%;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide {width:100%;height:300px;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide1 {background:url(../img/wedding-img14.jpg) no-repeat 50% 50%;background-size:cover;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide2 {background:url(../img/wedding-img8.jpg)  no-repeat 50% 50%;background-size:cover;}
+#wrap #main #section1 .slide-container .slide-view .slide-wrap .slide3 {background:url(../img/wedding-img9.jpg)  no-repeat 50% 50%;background-size:cover;}
+
+
+#wrap #main #section2 {width:100%;height:200px;display:flex;}
+#wrap #main #section2 .left-box {width:400px;height:100%;background-color:rgba(200,200,0, 1);}
+#wrap #main #section2 .center-box {width:400px;height:100%;background-color:rgba(0,200,100, 1);}
+#wrap #main #section2 .right-box {width:400px;height:100%;background-color:rgba(200,100,100, 1);}
+
+
+
+#wrap #footer {width:100%;height:100px;display:flex;}
+#wrap #footer .left-box {width:180px;height:100%;background-color:rgba(200,0,200, 1);}
+#wrap #footer .right-box {width:1020px;height:100%;}
+#wrap #footer .right-box .top {width:100%;height:50%;background-color:rgba(0,150,200, 1);}
+#wrap #footer .right-box .bottom {width:100%;height:50%;background-color:rgba(0,200,100, 1);}

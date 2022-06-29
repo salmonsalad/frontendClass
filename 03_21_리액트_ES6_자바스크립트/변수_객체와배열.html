@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트를 위한 자바스크립트</title>
+
+</head>
+<body>
+    
+    <div id="root">
+
+        <h1 id="title1"></h1>
+        <h2 id="ittle2"></h2>
+        <p class="pa pa1"></p>
+        <p class="pa pa2"></p>
+        <p class="pa pa3"></p>
+
+        <h1 id="calc"></h1>
+
+    </div>
+
+    <script>
+        //선택자
+        //도큐먼트.선택자.출력내요태그
+        document.getElementById('title1').innerHTML = '<em>DOM 도큐먼트(Document) 오브젝트(Object) 모델(Model)</em>';
+
+        // ES5
+        // var 변수 재사용, 재선언 가능
+        // var pa = 5 ;
+        // var pa = 10;
+        // var pa = 15;
+        // var pa = 5;
+
+
+        // ES6   ES2015  이후   ESNext
+        // const 불변 변수, 같은 이름의 변수는 중복 사용 불가(재선언 불가)
+        // let  변수 : 값은 변경가능, 같은 이름의 변수는 중복 사용 불가(재선언 불가)
+
+        const tit2 = document.getElementById('ittle2');
+        tit2.innerHTML = `<strong>바닐라 자바스크립트는 라이브러리를 사용하지 않고 사용하는 순수 자바스크립트이다.</strong>`
+
+
+        const pa0 = document.getElementsByClassName('pa')[0];  //배열처리
+        pa0.innerHTML = `0 클래스는 여러개가 중복 사용 가능하기때문에 선택자를 배열처리 해서 사용 한다.`
+
+        const pa1 = document.getElementsByClassName('pa')[1];  //배열처리
+        pa1.innerHTML = `1 클래스는 여러개가 중복 사용 가능하기때문에 선택자를 배열처리 해서 사용 한다.`
+
+        const pa2 = document.getElementsByClassName('pa')[2];  //배열처리
+        pa2.innerHTML = `2 클래스는 여러개가 중복 사용 가능하기때문에 선택자를 배열처리 해서 사용 한다.`;
+
+
+
+        let t2 = document.querySelector('#ittle2');
+        t2.innerHTML = `document.querySelector 쿼리셀렉터사용 편리함`;
+
+        let p0 = document.querySelector('.pa1');
+        let p1 = document.querySelector('.pa2');
+        let p2 = document.querySelector('.pa3');
+
+        p0.innerHTML = `document.querySelector('.pa1') 쿼리셀렉터사용 편리함`;
+        p1.innerHTML = `document.querySelector('.pa2') 쿼리셀렉터사용 편리함`;
+        p2.innerHTML = `document.querySelector('.pa3') 쿼리셀렉터사용 편리함`;
+
+
+        let a = 100;
+        let b = 200;
+        let c = a * b;
+
+        const calc = document.getElementById('calc');
+              //빽틱(역 홑따옴표) ` 
+              calc.innerHTML = `변수 a=${a}, 변수 b=${b}, c=${a}*${b}`;
+
+        //SASS 버전
+        //VS CODE
+        
+
+        // 객체 배열
+        // 반복문
+        // for
+        // forEach
+        // map
+
+        // 비구조화 구조분할할당
+        // 전개연산자
+
+
+
+    </script>
+
+</body>
+</html>

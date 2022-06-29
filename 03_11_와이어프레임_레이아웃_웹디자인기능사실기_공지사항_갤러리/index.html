@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이어프레임제작</title>
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/lib/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="wrap">
+    <header id="header">
+        <div class="left-box">
+
+        </div>
+        <div class="right-box">
+            <nav id="nav">
+                <ul>
+                    <li tabindex="0">
+                        <a href="#" class="main-btn main-btn1">MENU-1</a>
+                        <div class="sub sub1">
+                            <ul>
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#" class="main-btn main-btn2">MENU-2</a>
+                        <div class="sub sub2">
+                            <ul>
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li tabindex="0">
+                        <a href="#" class="main-btn main-btn3">MENU-3</a>
+                        <div class="sub sub3">
+                            <ul>
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                        </div>                    
+                    </li>
+                    <li tabindex="0">
+                        <a href="#" class="main-btn main-btn4">MENU-4</a>
+                        <div class="sub sub4">
+                            <ul>
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                        </div>                    
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section id="section1">
+            <!-- 메인슬라이드(캐러셀) 3개 이미지 롤링 + 맨앞 이미지와 + 맨뒤 이미지(배경이미지) -->
+            <!-- 너비 1200 높이 300 -->
+            <div class="slide-container">
+                <div class="slide-view">
+                    <ul class="slide-wrap"><!--  기차같이 길게 나열된다 5개 -->
+                        <li class="slide slide3"></li>
+                        <li class="slide slide1"></li>
+                        <li class="slide slide2"></li>
+                        <li class="slide slide3"></li>
+                        <li class="slide slide1"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+        <section id="section2">
+            <div class="left-box">
+                <!-- 공지사항/갤러리 : 탭메뉴 -->
+                <div class="left-gap">
+                    <div class="contents">
+                        <button class="notice-btn">공지사항</button><button class="gallery-btn">갤러리</button>
+                        <div class="notice">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center-box">
+                <div class="center-gap">
+                    <div class="contents">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="right-box">
+                <div class="right-gap">
+                    <div class="contents">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="left-box">
+
+        </div>
+        <div class="right-box">
+            <div class="top">
+
+            </div>
+            <div class="bottom">
+
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script>
+    // 제이쿼리 사용 기본 선언문 : jQuery
+    // jQuery(function(){
+    //     // 얼럿트:경고창
+    //     alert('자바스크립트 라이브러리 제이쿼리 선언문 안에 실행 경고창!');
+    //     //콘솔.로그 : 개발자 모드(f12)에서 콘솔창에서 확인 기록 - 디버깅 확인시 많이 사용
+    //     console.log( jQuery );
+    // });
+
+    // 제이쿼리 사용 기본 선언문 : $ 달러 사인(Sign)
+    // $(function(){
+    //     console.log( $ ); 
+    // });
+
+    //$ 충돌 피하는 즉시표현함수식[IIFE] 이피
+    (function($){ //매개변수(파라미터 Parameter)
+        //alert('즉시실행(표현)함수식' + abc );
+        console.log( $ ); //제이쿼리 프로그램 객체가 변수 moon으로 사용된다.
+
+        // 선택자 #header .left-box
+        $('#header .left-box').html('<h1 style="font-size:50px;color:#fff;text-align:center;">로고</h1>');  //태그사용가능 
+        //.html()  메서드(함수)  . 체인방식
+        //$('#header .left-box').text('<h1>로고</h1>');  //태그사용불가 텍스트로 인식
+
+        
+        //버튼 이벤트(Event) 등록
+        /*
+        - 마우스 클릭(click) 이벤트 : 딸깍
+        - 마우스 오버(mouseover) 이벤트 : 마우스가 버튼 위에 있는 상태(엔터 mouseenter)
+        - 마우스 아웃(mouseout) 이벤트 : 마우스가 버튼 위에서 떠나다 상태(리브 mouseleave)
+        */
+
+        // 나열형 버튼 이벤트
+        // 버튼이 어느 버튼이냐 : 선택자 버튼의 이름을 선택
+        // 선택자 : 메인버튼1(.main-btn1)에 - 마우스가 오버(mouseover)하면 그러면 서브메뉴(.sub1)를 보여주라(show())
+        $('.main-btn1').mouseenter(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub1').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn1').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+        // 접근성 : 키보드접근  focusin == focus   / focusout === blur
+        $('.main-btn1').focusin(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub1').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn1').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+
+
+
+
+        // 선택자 : 메인버튼2(.main-btn2)에 - 마우스가 오버(mouseover)하면그러면 서브메뉴(.sub2)를 보여주라(show())
+        $('.main-btn2').mouseenter(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub2').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn2').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+        // 접근성
+        $('.main-btn2').focusin(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub2').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn2').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+
+        // 선택자 : 메인버튼3(.main-btn3)에 - 마우스가 오버(mouseover)하면그러면 서브메뉴(.sub3)를 보여주라(show())
+        $('.main-btn3').mouseenter(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub3').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn3').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+        // 접근성
+        $('.main-btn3').focusin(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub3').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn3').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+
+        // 선택자 : 메인버튼4(.main-btn4)에 - 마우스가 오버(mouseover)하면그러면 서브메뉴(.sub4)를 보여주라(show())
+        $('.main-btn4').mouseenter(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub4').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn4').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+        //접근성
+        $('.main-btn4').focusin(function(){
+            $('.sub').hide(); //안보이게 숨겨라
+            $('.sub4').show();
+            $('.main-btn').removeClass('addHover'); //메인버튼 4개에 모든 추가된 클래스를 삭제 해라
+            $('.main-btn4').addClass('addHover'); //현재 버튼에 클래스를 추가 해라
+        });
+
+ 
+        //아이디 nav 를 떠나면 모든 서브메뉴 sub (show()를 hide()한다.)와 메인메뉴 main-btn (추가된 클래스 addHover 삭제)를 초기화 한다.
+        $('#nav').mouseleave(function(){
+            $('.sub').hide();
+            $('.main-btn').removeClass('addHover');
+        });
+
+
+        //notice-btn 클릭 이벤트 추가된 클래스만 삭제하면된다.
+        $('.notice-btn').click(function(){
+            $('.notice-btn').removeClass('addGallery');
+            $('.gallery-btn').removeClass('addGallery');
+        });
+
+        //gallery-btn 클릭 이벤트 버튼에 클래스를 추가
+        $('.gallery-btn').click(function(){ 
+            $('.notice-btn').addClass('addGallery');
+            $('.gallery-btn').addClass('addGallery');
+        });
+
+
+
+    })(jQuery); //전달인자(아규먼트 Argument)
+
+
+
+
+
+</script>
+</body>
+</html>
