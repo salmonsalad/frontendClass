@@ -1,0 +1,49 @@
+#skip {width:100%;position:fixed;top:0;left:0;z-index:2;}
+#skip li {border-bottom:1px solid white;}
+#skip li a {background:black;color:white;display:block;text-align:center;font-size:0;height:0;line-height:0;}
+#skip li a:focus {font-size:20px;height:60px;line-height:60px;}
+
+#wrapper {width:100%;z-index:1;position:relative;overflow: hidden;}
+#wrapper #header {width:100%;height:123px;background:#f0f0f0;position:fixed;top:0;left:0;z-index:3;}
+#wrapper #main   {width:100%;position: relative;z-index: 2;margin:123px 0 0 0;}
+#wrapper #main #section1  {width:100%;background:rgb(255, 255, 255);padding:130px 0;}
+
+/* 플롯트는 자신의 위치를 정렬 float:left; */
+
+#wrapper #main #section1 .container {width:1181px;margin:0 auto 0 auto;}
+#wrapper #main #section1 .container ul {width:100%;}
+#wrapper #main #section1 .container ul li {width:25%;float:left;}
+#wrapper #main #section1 .container ul li div.gap {margin:5.5px;overflow: hidden;}
+#wrapper #main #section1 .container ul li div.gap img {width:100%;transition:all .6s ease-in-out; }
+#wrapper #main #section1 .container ul li div.gap img:hover {transform:scale(1.2,1.2);opacity:.7;}
+
+
+/* 플렉스 박스는 부모영역에서 컨테이너(flex container)를 설정하고
+자식영역을 항목(item)이라하고 정렬한다. margin 이용한다. */
+/* 플렉스는 기본이 줄바꿈없이 정렬된다.
+그래서 줄바꿈을 지정한다. - 플렉스의 흐름설정 : 부모박스(플렉스 컨테이너)
+flex-flow:row wrap;  -> 가로로 정렬(배치)하되 줄바꿈
+flex-flow:row nowrap;  -> 가로로 정렬(배치)하되 줄바꿈없다(기본) */
+
+
+
+#wrapper #main #section2  {width:100%;background:#f7f7f7;padding:130px 0;}
+#wrapper #main #section2 .container {width:1181px;margin:0 auto;}
+#wrapper #main #section2 .container ul {width:100%;display:flex;flex-flow:row wrap;} /* 플렉트컨테이너 */
+#wrapper #main #section2 .container ul li {width:25%;} /* flex-item 플렉스아이템 */
+#wrapper #main #section2 .container ul li div.gap {margin:5.5px;overflow: hidden;}
+#wrapper #main #section2 .container ul li div.gap img {width:100%;transition: all .6s;}
+#wrapper #main #section2 .container ul li div.gap img:hover {transform:scale(1.2);filter:brightness(.8) blur(2px) grayscale(1);}  /* 120% */
+
+
+
+
+#wrapper #main #section3  {width:100%;height:500px;background:rgb(224, 197, 107);}
+#wrapper #main #section4  {width:100%;height:969px;background:rgb(138, 54, 54);}
+#wrapper #main #section5  {width:100%;height:700px;background:rgb(12, 108, 138);}
+#wrapper #main #section6  {width:100%;height:900px;background:rgb(105, 42, 42);}
+#wrapper #main #section7  {width:100%;height:500px;background:rgb(240, 63, 225);}
+#wrapper #main #section8  {width:100%;height:969px;background:rgb(124, 179, 189);}
+
+#wrapper #footer {width:100%;height:400px;background:rgb(144, 211, 20);position: relative;z-index: 1;}
+

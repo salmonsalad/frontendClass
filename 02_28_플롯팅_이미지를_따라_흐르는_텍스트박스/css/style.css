@@ -1,0 +1,49 @@
+#wrap {width:1000px;margin:150px auto;}
+
+
+#wrap .title {text-align:center;}
+#wrap .title h2 {
+    color:#fff;
+    font-size:60px;
+    font-weight:600;
+    text-shadow: 2px 2px 10px rgba(0,100,150, .5);
+}
+
+#wrap .text {
+    width:100%;
+    border:1px solid #ccc;
+    margin:50px 0;
+}
+#wrap .text .gap {
+    padding:50px;
+    font-size:13px;
+    color:#555;
+    line-height:180%;
+}
+#wrap .text .gap img {
+    width:200px;
+    float:left;
+    margin:0 20px 0 0;
+    border:6px solid #fff;
+    box-shadow:3px 3px 13px rgba(0,0,0, .25);
+}
+
+#wrap .text1 {
+    text-align:  left;
+    letter-spacing: .3px;
+}
+#wrap .text2 {
+    text-align: justify;
+}
+#wrap .text2 .gap img {
+    float:right;
+    margin:0 0 0 20px;
+}
+
+
+/* 효과 주기 */
+#wrap .text1 .gap img {transition:all .6s ease-in-out;}
+#wrap .text1 .gap:hover img {transform: rotateX(360deg);}
+
+#wrap .text2 .gap img {transition:all .6s ease-in-out;}
+#wrap .text2 .gap:hover img {transform: rotateY(720deg);}

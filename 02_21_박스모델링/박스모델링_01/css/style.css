@@ -1,0 +1,6 @@
+/* 프롯팅 기법 */
+.img1 {width:33.333%;float:left;}
+
+/* 플랙스 기법 */
+.img2-box {display:flex;}
+.img2 {width:25%;}
