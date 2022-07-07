@@ -1,0 +1,125 @@
+@charset "UTF-8";
+@media all and (max-width: 1170px) {
+  /* 1170 이하이면 */
+  #wrap #header .container .gap .wrap #nav-wrap #nav .mobile-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 블럭이아니고 플렉스 */
+  }
+  #wrap #header .container .gap .wrap #nav-wrap #nav > ul {
+    display: none;
+  }
+  #wrap #main #section1 .container .gap .wrap .slide-container .slide-view .slide-wrap .slide .title h3 {
+    font-size: 1.538461538vw;
+  }
+  #wrap #main #section1 .container .gap .wrap .slide-container .slide-view .slide-wrap .slide .title h2 {
+    font-size: 5.982905983vw;
+  }
+  #wrap #main #section2 .container .gap .wrap .content ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+  #wrap #main #section2 .container .gap .wrap .content ul li {
+    width: 50%;
+  }
+  #wrap #main #section2 .container .gap .wrap .content ul li .col-gap {
+    margin: 15px;
+  }
+  #wrap #main #section3 .container .gap .wrap .content > ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  #wrap #main #section3 .container .gap .wrap .content > ul li {
+    width: 50%;
+  }
+  #wrap #main #section3 .container .gap .wrap .content > ul li .col-gap {
+    margin: 15px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  #wrap #main #section2,
+  #wrap #main #section3 {
+    padding: 80px 0;
+  }
+  #wrap #main #section2 .container .gap .wrap .title,
+  #wrap #main #section3 .container .gap .wrap .title {
+    padding: 0 0 40px 0;
+  }
+  #wrap #main #section3 .container .gap .wrap .title h2 {
+    font-size: 25px;
+  }
+  #wrap #main #section4 .container .gap .wrap .menu-box {
+    padding: 60px 0;
+  }
+}
+
+@media all and (max-width: 900px) {
+  #wrap #main #section2 .container .gap .wrap .title p {
+    font-size: 20px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  #wrap #main #section2 .container .gap .wrap .title p br {
+    display: none;
+  }
+}
+
+@media all and (max-width: 680px) {
+  #wrap #main #section2 .container .gap .wrap .content ul li {
+    width: 100%;
+  }
+  #wrap #main #section4 .container .gap .wrap .menu-box ul {
+    display: block;
+    width: 100%;
+  }
+  #wrap #main #section4 .container .gap .wrap .menu-box ul li {
+    margin: 0;
+    width: 100%;
+    padding: 6px 0;
+  }
+  #wrap #main #section4 .container .gap .wrap .menu-box ul li a {
+    display: inline-block;
+  }
+  #wrap #main #section4 .container .gap .wrap .menu-box {
+    padding: 50px 0;
+  }
+}
+
+@media all and (max-width: 560px) {
+  #wrap #main #section3 .container .gap .wrap .title h2 {
+    font-size: 20px;
+  }
+  #wrap #main #section3 .container .gap .wrap .content > ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  #wrap #main #section3 .container .gap .wrap .content > ul li {
+    width: 100%;
+  }
+  #wrap #main #section3 .container .gap .wrap .content > ul li .col-gap {
+    margin: 15px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  #wrap #main #section2 {
+    padding: 60px 0;
+  }
+  #wrap #main #section2 .container .gap .wrap .title {
+    padding: 0 0 40px 0;
+  }
+}
+
+@media all and (max-width: 400px) {
+  #wrap #main #section3 .container .gap .wrap .title h2 {
+    font-size: 17px;
+  }
+}

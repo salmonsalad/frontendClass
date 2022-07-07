@@ -1,0 +1,19 @@
+#app {
+    text-align: center;
+    
+    h1 {
+        font-size:30px;
+        font-weight: 300;
+    }
+    > h2 {
+        font-size:100px;
+        color:#c33;
+        font-weight: 600;
+    }
+    #sub {
+        h2 {
+            font-size:20px;
+            font-weight: 300;  
+        }
+    }
+}

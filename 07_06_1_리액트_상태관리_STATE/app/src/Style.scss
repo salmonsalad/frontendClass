@@ -1,0 +1,33 @@
+* {margin:0;padding:0;}
+#app {
+  font-family: '맑은고딕';
+  text-align: center;
+  padding:0 0 50px;
+  border-bottom: 1px solid #ccc;
+  h1 {  
+    color:#000;
+    font-size: 30px;
+
+  }
+  button {
+    width:50px;
+    height:40px;
+    background: #000;
+    color:#fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin:0 10px;
+  }
+}
+#sub {
+  font-family: '맑은고딕';
+  text-align: center;
+  h2 {
+    color:#000;
+    font-size: 20px;
+  }
+  h1 {
+    color:#c33;
+    font-size: 100px;
+  }
+}
